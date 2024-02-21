@@ -1,4 +1,0 @@
-enhancement: [ 'feat/*', '*/feat/*' ]
-bug: [ 'bug/*', '*/bug/*' ]
-chore: [ 'chore/*', '*/chore/*' ]
-documentation: [ 'doc/*', '*/doc/*' ]

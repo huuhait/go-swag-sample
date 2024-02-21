@@ -1,0 +1,58 @@
+basePath: /v2
+definitions:
+  main.HealthCheckRequest:
+    properties:
+      group_id:
+        example: 1
+        type: integer
+      name:
+        type: string
+    type: object
+  main.Order:
+    properties:
+      data: {}
+      id:
+        type: integer
+    type: object
+host: petstore.swagger.io
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /healthcheck/{group_id}:
+    get:
+      consumes:
+      - application/json
+      description: get the status of server.
+      parameters:
+      - description: Group ID
+        in: path
+        name: group_id
+        required: true
+        type: integer
+      - description: body params
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/main.HealthCheckRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Order'
+      summary: Show the status of server.
+      tags:
+      - root
+swagger: "2.0"
